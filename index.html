@@ -14,10 +14,10 @@
 <body>
     <h1>Body Mass Index(BMI) Calculator</h1>
     <form>
-        <div class="input-group mb-3 col-3 mx-auto">
+        <div class=" mb-3 col-3 mx-auto">
             <label for="weight" class="form-label">Weight </label>
             <input type="text" class="form-control" id="weight" placeholder="Your weight?">
-            <span class="input-group-text " id="basic-addon2">kg</span>
+            
         </div>
 
         </div>
@@ -66,7 +66,7 @@
                     result = 'invalid';
             }
             let p1 = document.querySelector("p");
-            p1.innerHTML = (`You are ${result}.`);
+            p1.innerHTML = (` ${result}.`);
 
         }
 
