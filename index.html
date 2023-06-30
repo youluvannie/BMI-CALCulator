@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Body Mass Index(BMI) Calculator</h1>
+    <form>
+        <div class="input-group mb-3 col-3 mx-auto">
+            <label for="weight" class="form-label">Weight </label>
+            <input type="text" class="form-control" id="weight" placeholder="Your weight?">
+            <span class="input-group-text " id="basic-addon2">kg</span>
+        </div>
+
+        </div>
+
+        <div class="mb-3 col-3 mx-auto">
+            <label for="height" class="form-label">Height</label>
+            <input type="text" class="form-control" id="height" placeholder="Your height?">
+
+        </div>
+
+    </form>
+    <button class=" btn btn-primary d-grid gap-1 col-3 mx-auto btn-lg fs-4 mb-7" onclick="
+            classifyBMI();">Submit</button>
+    <p> ...</p>
+
+
+
+
+
+
+
+    <script>
+
+        function classifyBMI() {
+            const value = getVal();
+            switch (true) {
+                case value >= 0 && value <= 18.5:
+                    result = 'underweight';
+                    break;
+                case value >= 18.5 && value <= 24.9:
+                    result = 'normal weight';
+                    break;
+                case value >= 25 && value <= 29.9:
+                    result = 'over weight';
+                    break;
+                case value >= 30 && value <= 34.9:
+                    result = 'Obesity class 1';
+                    break;
+                case value >= 35 && value <= 39.9:
+                    result = 'Obesity class 2';
+                    break;
+                case value >= 40:
+                    result = 'Obesity class 3 ';
+                    break;
+                default:
+                    result = 'invalid';
+            }
+            let p1 = document.querySelector("p");
+            p1.innerHTML = (`You are ${result}.`);
+
+        }
+
+
+
+        function getVal() {
+            const weight = document.getElementById("weight").value;
+            const apparentHeight = document.getElementById("height").value;
+
+            const realHeight = (Math.pow(apparentHeight, 2));
+            const BMI = (weight / realHeight);
+
+            return (BMI);
+        }
+    </script>
+</body>
+
+</html>

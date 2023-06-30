@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+    margin-top: 7px;
+}
+
+p {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+#green {
+    color: green;
+}
+
+#red {
+    color: red;
+}
+
+#yellow {
+    color: yellow;
+}
