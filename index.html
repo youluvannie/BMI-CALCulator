@@ -12,16 +12,17 @@
 </head>
 
 <body>
+
     <h1>Body Mass Index(BMI) Calculator</h1>
     <form>
-        <div class="input-group mb-3 col-3 mx-auto">
-            <label for="weight" class="form-label">Weight </label>
+        <div class="mb-3 col-3 mx-auto" style="width: 300px;">
+            <label for="weight" class="form-label">Weight(kg) </label>
             <input type="text" class="form-control" id="weight" placeholder="Your weight?">
-            <span class="input-group-text " id="basic-addon2">kg</span>
+
         </div>
 
         <div class="mb-3 col-3 mx-auto" style="width: 300px;">
-            <label for="height(m)" class="form-label">Height</label>
+            <label for="height(m)" class="form-label">Height(m)</label>
             <input type="number" class="form-control" id="height" placeholder="Your height?">
 
         </div>
@@ -39,34 +40,37 @@
     <script>
         function classifyBMI() {
             const value = getVal();
-            let p1 = document.querySelector("p");
+            let p = document.querySelector("p");
             switch (true) {
                 case value >= 0 && value <= 18.5:
                     result = 'underweight';
-                    p1.className = 'red';
+                    p.className = 'red';
                     break;
                 case value >= 18.5 && value <= 24.9:
                     result = 'normal weight';
-                    p1.className = 'green';
+                    p.className = 'green';
                     break;
                 case value >= 25 && value <= 29.9:
                     result = 'over weight';
-                    p1.className = 'yellow';
+                    p.className = 'yellow';
                     break;
                 case value >= 30 && value <= 34.9:
                     result = 'Obesity class 1';
+                    p.className = 'red';
                     break;
                 case value >= 35 && value <= 39.9:
                     result = 'Obesity class 2';
+                    p.className = 'red';
                     break;
                 case value >= 40:
                     result = 'Obesity class 3 ';
+                    p.className = 'red';
                     break;
                 default:
                     result = 'invalid';
             }
-            let p1 = document.querySelector("p");
-            p1.innerHTML = (`You are ${result}.`);
+
+            p.innerHTML = (`You are ${result}.`);
 
         }
 
